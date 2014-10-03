@@ -1,0 +1,32 @@
+[user]
+	name = Juan Leung
+	email = juanmleung@gmail.com
+[alias]
+        s = status -s
+        st = status
+				co = checkout
+				ci = commit
+				ca = commit -am
+				c = commit -m
+        branches = branch -a
+        remotes = remote -v 
+        d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+[apply]
+        whitespace = fix
+[color]
+        ui = auto
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[credential]
+	helper = osxkeychain

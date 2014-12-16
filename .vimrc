@@ -62,6 +62,9 @@ set cursorline
 set splitbelow
 set splitright
 set smartindent
+set backspace=2
+set backspace=indent,eol,start
+set clipboard=unnamedplus
 
 if exists("&relativenumber")
   set relativenumber
@@ -80,8 +83,8 @@ let g:html_indent_inctags="html,body,head,tbody,script"
 let g:solarized_termcolors = 256
 " let g:solarized_visibility = 'high'
 " let g:solarized_contrast = 'high'
-"colorscheme solarized
-colorscheme Tomorrow-Night-Eighties
+colorscheme solarized
+"colorscheme Tomorrow-Night-Eighties
 
 " Cambia el cursor según el modo solo para Iterm2
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"

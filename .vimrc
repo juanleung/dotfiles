@@ -22,12 +22,15 @@ Plugin 'jasonlong/lavalamp'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
+Plugin 'nvie/vim-flake8'
+Plugin 'bronson/vim-trailing-whitespace'
 
 call vundle#end()
 filetype plugin indent on
 filetype indent on
 syntax on
+syntax enable
 
 let mapleader=","
 
@@ -64,7 +67,7 @@ set splitright
 set smartindent
 set backspace=2
 set backspace=indent,eol,start
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 if exists("&relativenumber")
   set relativenumber
@@ -81,10 +84,12 @@ nnoremap <c-k> :resize +1<cr>
 let g:html_indent_inctags="html,body,head,tbody,script"
 
 let g:solarized_termcolors = 256
-" let g:solarized_visibility = 'high'
-" let g:solarized_contrast = 'high'
+"let g:solarized_visibility = 'high'
+"let g:solarized_contrast = 'high'
 colorscheme solarized
-"colorscheme Tomorrow-Night-Eighties
+" colorscheme darcula
+" colorscheme Monokai
+" colorscheme Tomorrow-Night-Eighties
 
 " Cambia el cursor según el modo solo para Iterm2
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -188,3 +193,6 @@ let g:syntastic_python_checkers = ['flake8']
 
 " YCM
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Corre flake8 cada vez que se guarda un archivo python
+" autocmd BufWritePost *.py call Flake8()

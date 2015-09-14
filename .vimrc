@@ -86,7 +86,7 @@ let g:html_indent_inctags="html,body,head,tbody,script"
 let g:solarized_termcolors = 256
 "let g:solarized_visibility = 'high'
 "let g:solarized_contrast = 'high'
-colorscheme solarized
+colorscheme molokai
 " colorscheme darcula
 " colorscheme Monokai
 " colorscheme Tomorrow-Night-Eighties
@@ -104,6 +104,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
+let NERDTreeShowHidden=1
 let g:vimfiler_as_default_explorer = 1
 
 " Copiado desde Janus

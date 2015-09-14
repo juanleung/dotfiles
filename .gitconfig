@@ -8,8 +8,9 @@
 				ci = commit
 				ca = commit -am
 				c = commit -m
-        branches = branch -a
-        remotes = remote -v 
+				br = branch
+        brs = branch -a
+        remotes = remote -v
         d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 [apply]
         whitespace = fix

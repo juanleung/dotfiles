@@ -86,7 +86,7 @@ let g:html_indent_inctags="html,body,head,tbody,script"
 let g:solarized_termcolors = 256
 "let g:solarized_visibility = 'high'
 "let g:solarized_contrast = 'high'
-colorscheme solarized
+colorscheme molokai
 " colorscheme darcula
 " colorscheme Monokai
 " colorscheme Tomorrow-Night-Eighties
@@ -104,6 +104,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
+let NERDTreeShowHidden=1
 let g:vimfiler_as_default_explorer = 1
 
 " Copiado desde Janus
@@ -164,6 +165,14 @@ let g:ctrlp_working_path_mode = 2
 let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 5
+
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
 
 " Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle

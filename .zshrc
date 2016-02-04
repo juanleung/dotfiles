@@ -6,6 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
+# ZSH_THEME="pure"
 ZSH_THEME="pure"
 
 # Example aliases
@@ -15,6 +16,12 @@ alias cl="clear"
 alias viminstall="vim +PluginInstall +qall"
 alias psqllocal="psql -h localhost"
 alias mongostart="mongod --fork --config /usr/local/etc/mongod.conf"
+alias b2d="boot2docker"
+alias tmux="tmux attach -t base || tmux new -s base"
+alias docker_shell="boot2docker shellinit"
+alias dk="docker"
+alias dkc="docker-compose"
+alias dkm="docker-machine"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,13 +66,15 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export PATH="/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/Applications/Postgres.app/Contents/Versions/9.3/bin"
-# export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
-# export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/tools
-# export GOROOT=/usr/local/opt/go/libexec
-# export PATH=$PATH:$GOROOT/bin
-# export GOPATH=$HOME/go
-# export PATH=$PATH:$GOPATH/bin
+export PATH="/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
+export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/tools
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:~/.composer/vendor/bin
+export PATH=/Applications/MAMP/bin/php/php5.6.7/bin:$PATH
 
 # GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 # export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/
@@ -75,6 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# export DOCKER_HOST=tcp://192.168.59.103:2376
+# export DOCKER_CERT_PATH=/Users/jleung/.boot2docker/certs/boot2docker-vm
+# export DOCKER_TLS_VERIFY=1
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -89,9 +102,20 @@ export LANG=en_US.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 # autoload -U promptinit && promptinit
-PURE_GIT_PULL=0
+# PURE_GIT_PULL=0
 # prompt pure
 
-# . ~/Stuffs/z/z.sh
+. ~/Stuffs/z/z.sh
+source kvm.sh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+code () {
+	if [[ $# = 0 ]]
+	then
+		open -a "Visual Studio Code"
+	else
+		[[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+		open -a "Visual Studio Code" --args "$F"
+	fi
+}

@@ -104,9 +104,11 @@ let g:html_indent_inctags="html,body,head,tbody,script"
 " let g:solarized_contrast = 'high'
 " colorscheme solarized
 " colorscheme wombat256i
-colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night-Eighties
 " colorscheme duotone-darkspace
-" colorscheme molokai
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
 
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
@@ -213,6 +215,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_javascript_jshint_exec='/usr/local/bin/jshint'
 let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_aggregate_errors = 1
 
 " YCM
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -222,6 +225,24 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Configuración de vim-go
 let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_metalinter_enabled = ['golint', 'vetshadow', 'errcheck', 'ineffassign', 'vet', 'goimports', 'defercheck', 'aligncheck', 'dupl', 'gofmt', 'varcheck', 'gocyclo', 'testify', 'structcheck', 'deadcode']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>ge <Plug>(go-rename)
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>aa :cclose<CR>
 "let g:go_highlight_functions = 1
 
 " Configuracion del Nerdcommenter

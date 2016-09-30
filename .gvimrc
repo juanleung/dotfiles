@@ -1,5 +1,5 @@
 " set guifont=Inconsolata-dz\ for\ Powerline:h12
-set guifont=Source\ Code\ Pro:h14
+set guifont=Hack:h12
 set guioptions-=T
 set guioptions-=L
 set guioptions-=r

@@ -36,6 +36,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 " Plugin 'OmniSharp/Omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'Raimondi/delimitMate'
+Plugin 'muellan/am-colors'
 " Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
@@ -106,8 +108,8 @@ let g:html_indent_inctags="html,body,head,tbody,script"
 " colorscheme wombat256i
 " colorscheme Tomorrow-Night-Eighties
 " colorscheme duotone-darkspace
-let g:rehash256 = 1
-let g:molokai_original = 1
+" let g:rehash256 = 1
+" let g:molokai_original = 1
 colorscheme molokai
 
 " NERDTree
